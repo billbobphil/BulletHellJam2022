@@ -900,6 +900,7 @@ GameObject:
   - component: {fileID: 1816706415}
   - component: {fileID: 1816706414}
   - component: {fileID: 1816706416}
+  - component: {fileID: 1816706417}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Sword
@@ -1010,6 +1011,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53a8485af91117d45a62b58d150a38a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1816706417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816706412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b856d3af7ce8d94aac73ca29720be4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2073217641
