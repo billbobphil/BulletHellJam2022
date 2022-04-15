@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\PlatformDirectionNodeController.cs" />
      <Compile Include="Assets\Scripts\PlatformMovementRestriction.cs" />
      <Compile Include="Assets\Scripts\SwordAttackController.cs" />
+     <Compile Include="Assets\Scripts\SwordPositionController.cs" />
      <Reference Include="UnityEngine">
      <HintPath>E:\UnityEditors\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
