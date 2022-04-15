@@ -34,9 +34,9 @@ public class SwordPositionController : MonoBehaviour
         double smallX = distanceBetweenPlayerAndSword * Math.Sin(angleInRadians);
         double smallY = distanceBetweenPlayerAndSword * Math.Cos(angleInRadians);
         
-        Vector3 newSwordPosition = new Vector3((float)smallX, (float)smallY, 0);
+        Vector3 newSwordPosition = new ((float)smallX, (float)smallY, 0);
         
-        Vector3 newSwordAngle = new Vector3(0, 0, (float)-angleInDegrees);
+        Vector3 newSwordAngle = new (0, 0, (float)-angleInDegrees);
         
         sword.transform.localPosition = newSwordPosition;
         sword.transform.eulerAngles = newSwordAngle;
