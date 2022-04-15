@@ -15,7 +15,7 @@ public class PlatformDirectionNodeController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("Sword"))
         {
             _parentPlatformMovementController.ChangeDirection(myDirection);
         }

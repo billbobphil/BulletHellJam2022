@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlatformMovementController : MonoBehaviour
@@ -11,22 +12,22 @@ public class PlatformMovementController : MonoBehaviour
     private Transform _playerTransform;
     private float _platformWidth;
     private float _platformHeight;
-    private MovementRestriction _movementRestriction;
-    private bool _isAtEdge = false;
+    private PlatformMovementRestriction _platformMovementRestriction;
+    private List<PlatformMovementRestriction.CollisionDirection> _collisionEdges = new();
 
     public enum PlatformDirections
     {
-        Stationary,
         Forward,
         Backwards,
         Left,
-        Right
+        Right,
+        Stationary
     }
 
     private void Awake()
     {
         _playerTransform = GameObject.FindWithTag("Player").transform;
-        _movementRestriction = GameObject.FindWithTag("Overseer").GetComponent<MovementRestriction>();
+        _platformMovementRestriction = GameObject.FindWithTag("Overseer").GetComponent<PlatformMovementRestriction>();
     }
     
     private void Start()
@@ -62,16 +63,18 @@ public class PlatformMovementController : MonoBehaviour
         }
         
         transform.Translate(movementDirection);
-        
-        if (_playerOnBoard && !_isAtEdge)
+
+        if (!_playerOnBoard) return;
+
+        if (!_collisionEdges.Contains((PlatformMovementRestriction.CollisionDirection)_currentDirection) && _currentDirection != PlatformDirections.Stationary)
         {
-           _playerTransform.Translate(movementDirection);
+            _playerTransform.Translate(movementDirection);
         }
     }
 
     private void LateUpdate()
     {
-        _isAtEdge = _movementRestriction.RestrictObjectMovement(transform, _platformWidth, _platformHeight);
+        _collisionEdges = _platformMovementRestriction.RestrictObjectMovement(transform, _platformWidth, _platformHeight);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
