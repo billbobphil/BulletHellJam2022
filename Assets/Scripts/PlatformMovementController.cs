@@ -18,6 +18,7 @@ public class PlatformMovementController : MonoBehaviour
     private bool _canMoveBackwards = true;
     private bool _canMoveLeft = true;
     private bool _canMoveRight = true;
+    private PlatformDirectionNodeController _activeNodeController;
 
     public enum PlatformDirections
     {
@@ -140,5 +141,17 @@ public class PlatformMovementController : MonoBehaviour
     public void ChangeDirection(PlatformDirections direction)
     {
         _currentDirection = direction;
+    }
+
+    public void ToggleActiveControlNode(PlatformDirectionNodeController controller)
+    {
+        if (_activeNodeController != null)
+        {
+            _activeNodeController.MakeUnactivated();
+        }
+        
+        controller.MakeActivated();
+
+        _activeNodeController = controller;
     }
 }
