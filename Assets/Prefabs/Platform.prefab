@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8431589031570636429}
   - component: {fileID: 8431589031570636428}
   - component: {fileID: 8431589031570636430}
+  - component: {fileID: 8883316792167702311}
   m_Layer: 0
   m_Name: Left Control
   m_TagString: Untagged
@@ -125,6 +126,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDirection: 2
+--- !u!50 &8883316792167702311
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431589031570636434}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8431589031909283093
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +159,7 @@ GameObject:
   - component: {fileID: 8431589031909283094}
   - component: {fileID: 8431589031909283088}
   - component: {fileID: 8431589031909283089}
+  - component: {fileID: 8999097848701431865}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Platform
@@ -253,6 +276,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &8999097848701431865
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431589031909283093}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8431589032159092325
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +309,7 @@ GameObject:
   - component: {fileID: 8431589032159092320}
   - component: {fileID: 8431589032159092327}
   - component: {fileID: 8431589032159092321}
+  - component: {fileID: 2007903830354460650}
   m_Layer: 0
   m_Name: Forward Control
   m_TagString: Untagged
@@ -378,6 +423,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDirection: 0
+--- !u!50 &2007903830354460650
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431589032159092325}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8431589032298213173
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +456,7 @@ GameObject:
   - component: {fileID: 8431589032298213168}
   - component: {fileID: 8431589032298213175}
   - component: {fileID: 8431589032298213169}
+  - component: {fileID: 3419340355264239730}
   m_Layer: 0
   m_Name: Backwards Control
   m_TagString: Untagged
@@ -503,6 +570,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDirection: 1
+--- !u!50 &3419340355264239730
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431589032298213173}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8431589032364822553
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +603,7 @@ GameObject:
   - component: {fileID: 8431589032364822548}
   - component: {fileID: 8431589032364822555}
   - component: {fileID: 8431589032364822549}
+  - component: {fileID: 6592516228824881171}
   m_Layer: 0
   m_Name: Right Control
   m_TagString: Untagged
@@ -628,3 +717,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDirection: 3
+--- !u!50 &6592516228824881171
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431589032364822553}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
