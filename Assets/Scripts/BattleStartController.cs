@@ -9,7 +9,7 @@ public class BattleStartController : MonoBehaviour
 
     public void Begin()
     {
-        levelBoss.GetComponent<BossOneController>().CommenceBattleStart();
+        levelBoss.GetComponent<TutorialBossController>().CommenceBattleStart();
     }
     
 }

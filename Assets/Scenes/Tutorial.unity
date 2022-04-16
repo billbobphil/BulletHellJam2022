@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 870462691}
   - component: {fileID: 870462693}
   m_Layer: 0
-  m_Name: BossOne
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,8 +305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81643ecc2bdb92419524db28dbc8d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletTypes:
-  - {fileID: 6969080391086135946, guid: fbe7ecd0b01c4184baa9c218b3febb8b, type: 3}
+  gunPrefabs:
+  - {fileID: 7131723819410884451, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+  - {fileID: 8135884087550187017, guid: 6b64a8990871b6f4692e3a70c432f70c, type: 3}
 --- !u!1 &1062142442
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +406,7 @@ GameObject:
   - component: {fileID: 1227224172}
   - component: {fileID: 1227224170}
   - component: {fileID: 1227224171}
+  - component: {fileID: 1227224173}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -538,7 +540,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227224165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d564f354e8c1d304dbe28dea90b06493, type: 3}
+  m_Script: {fileID: 11500000, guid: f2e5bd20382375642b39f2873f36e6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1227224173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227224165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e568c8f20acf24ebe943d2d9f22b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1816706412

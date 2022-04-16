@@ -9,6 +9,7 @@ TagManager:
   - Sword
   - StartingPlatform
   - EndingPlatform
+  - Bullet
   layers:
   - Default
   - TransparentFX
