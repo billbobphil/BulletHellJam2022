@@ -14,7 +14,10 @@ public class PlatformMovementController : MonoBehaviour
     private float _platformHeight;
     private PlatformMovementRestriction _platformMovementRestriction;
     private List<PlatformMovementRestriction.CollisionDirection> _collisionEdges = new();
-    private bool _hasHitOtherPlatform = false;
+    private bool _canMoveForward = true;
+    private bool _canMoveBackwards = true;
+    private bool _canMoveLeft = true;
+    private bool _canMoveRight = true;
 
     public enum PlatformDirections
     {
@@ -40,39 +43,36 @@ public class PlatformMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_hasHitOtherPlatform)
+        Vector3 movementDirection;
+        switch (_currentDirection)
         {
-            Vector3 movementDirection;
-            switch (_currentDirection)
-            {
-                case(PlatformDirections.Forward):
-                    movementDirection = new Vector3(0, PlatformSpeed, 0);
-                    break;
-                case(PlatformDirections.Backwards):
-                    movementDirection = new Vector3(0, -PlatformSpeed, 0);
-                    break;
-                case(PlatformDirections.Left):
-                    movementDirection = new Vector3(-PlatformSpeed,0, 0);
-                    break;
-                case(PlatformDirections.Right):
-                    movementDirection = new Vector3(PlatformSpeed, 0, 0);
-                    break;
-                case(PlatformDirections.Stationary):
-                    movementDirection = new Vector3(0, 0, 0);
-                    break;
-                default:
-                    movementDirection = new Vector3(0, 0, 0);
-                    break;
-            }
-        
-            transform.Translate(movementDirection);
+            case(PlatformDirections.Forward):
+                movementDirection = _canMoveForward ? new Vector3(0, PlatformSpeed, 0) : new Vector3(0, 0, 0);
+                break;
+            case(PlatformDirections.Backwards):
+                movementDirection = _canMoveBackwards ? new Vector3(0, -PlatformSpeed, 0) : new Vector3(0, 0, 0);
+                break;
+            case(PlatformDirections.Left):
+                movementDirection = _canMoveLeft ? new Vector3(-PlatformSpeed,0, 0) : new Vector3(0,0,0);
+                break;
+            case(PlatformDirections.Right):
+                movementDirection = _canMoveRight ? new Vector3(PlatformSpeed, 0, 0) : new Vector3(0,0,0);
+                break;
+            case(PlatformDirections.Stationary):
+                movementDirection = new Vector3(0, 0, 0);
+                break;
+            default:
+                movementDirection = new Vector3(0, 0, 0);
+                break;
+        }
+    
+        transform.Translate(movementDirection);
 
-            if (!_playerOnBoard) return;
+        if (!_playerOnBoard) return;
 
-            if (!_collisionEdges.Contains((PlatformMovementRestriction.CollisionDirection)_currentDirection) && _currentDirection != PlatformDirections.Stationary)
-            {
-                _playerTransform.Translate(movementDirection);
-            }
+        if (!_collisionEdges.Contains((PlatformMovementRestriction.CollisionDirection)_currentDirection) && _currentDirection != PlatformDirections.Stationary)
+        {
+            _playerTransform.Translate(movementDirection);
         }
     }
 
@@ -83,12 +83,6 @@ public class PlatformMovementController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Platform") && _currentDirection != PlatformDirections.Stationary)
-        {
-            ChangeDirection(PlatformDirections.Stationary);
-            _hasHitOtherPlatform = true;
-        }
-        
         if (col.CompareTag("Player"))
         {
             _playerOnBoard = true;
@@ -101,6 +95,46 @@ public class PlatformMovementController : MonoBehaviour
         {
             _playerOnBoard = false;
         }
+    }
+
+    public void EnterCollisionWithOtherPlatform(PlatformDirections directionToRestrict)
+    {
+        switch (directionToRestrict)
+        {
+            case PlatformDirections.Forward:
+                _canMoveForward = false;
+                break;
+            case PlatformDirections.Backwards:
+                _canMoveBackwards = false;
+                break;
+            case PlatformDirections.Left:
+                _canMoveLeft = false;
+                break;
+            case PlatformDirections.Right:
+                _canMoveRight = false;
+                break;
+        }    
+        
+        ChangeDirection(PlatformDirections.Stationary);
+    }
+
+    public void ExitCollisionWithOtherPlatform(PlatformDirections directionExiting)
+    {
+        switch (directionExiting)
+        {
+            case PlatformDirections.Forward:
+                _canMoveBackwards = true;
+                break;
+            case PlatformDirections.Backwards:
+                _canMoveForward = true;
+                break;
+            case PlatformDirections.Left:
+                _canMoveRight = true;
+                break;
+            case PlatformDirections.Right:
+                _canMoveLeft = true;
+                break;
+        }    
     }
 
     public void ChangeDirection(PlatformDirections direction)
