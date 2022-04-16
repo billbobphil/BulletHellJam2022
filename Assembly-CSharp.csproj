@@ -41,22 +41,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Player\PlayerMovementController.cs" />
-     <Compile Include="Assets\Scripts\PlatformMovementController.cs" />
-     <Compile Include="Assets\Scripts\PlatformDirectionNodeController.cs" />
      <Compile Include="Assets\Scripts\PlatformMovementRestriction.cs" />
-     <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
-     <Compile Include="Assets\Scripts\Player\SwordPositionController.cs" />
-     <Compile Include="Assets\Scripts\Bullets\BasicBulletController.cs" />
-     <Compile Include="Assets\Scripts\Bosses\TutorialBossController.cs" />
-     <Compile Include="Assets\Scripts\BattleStartController.cs" />
-     <Compile Include="Assets\Scripts\Bosses\IBossController.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerOnPlatformController.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerBulletCollisionController.cs" />
-     <Compile Include="Assets\Scripts\Guns\BasicGunController.cs" />
-     <Compile Include="Assets\Scripts\Guns\GunController.cs" />
-     <Compile Include="Assets\Scripts\Guns\SpreadGunController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMovementController.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossController.cs" />
+     <Compile Include="Assets\Scripts\PlatformDirectionNodeController.cs" />
+     <Compile Include="Assets\Scripts\BattleStartController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerOnPlatformController.cs" />
+     <Compile Include="Assets\Scripts\Guns\GunController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerBulletCollisionController.cs" />
+     <Compile Include="Assets\Scripts\PlatformMovementController.cs" />
+     <Compile Include="Assets\Scripts\Player\SwordPositionController.cs" />
+     <Compile Include="Assets\Scripts\Guns\BasicGunController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\IBossController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\TutorialBossController.cs" />
+     <Compile Include="Assets\Scripts\Guns\SpreadGunController.cs" />
+     <Compile Include="Assets\Scripts\Bullets\BasicBulletController.cs" />
+     <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerDeathController.cs" />
      <Reference Include="UnityEngine">
      <HintPath>E:\UnityEditors\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

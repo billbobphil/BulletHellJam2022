@@ -6,6 +6,12 @@ namespace Player
     public class PlayerOnPlatformController : MonoBehaviour
     {
         private List<Collider2D> platformColliders = new();
+        private PlayerDeathController _playerDeathController;
+
+        private void Awake()
+        {
+            _playerDeathController = GameObject.FindWithTag("Overseer").GetComponent<PlayerDeathController>();
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -24,8 +30,7 @@ namespace Player
 
             if (platformColliders.Count == 0)
             {
-                Debug.Log("Player is above nothing");
-                //TODO: Call death routine.
+                _playerDeathController.KillPlayer();
             }
         }
 

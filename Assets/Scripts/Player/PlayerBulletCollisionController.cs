@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class PlayerBulletCollisionController : MonoBehaviour
 {
+    private PlayerDeathController _playerDeathController;
+
+    private void Awake()
+    {
+        _playerDeathController = GameObject.FindWithTag("Overseer").GetComponent<PlayerDeathController>();
+    }
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Bullet"))
         {
-            Debug.Log("Player hit by bullet");
+            _playerDeathController.KillPlayer();
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlatformMovementController : MonoBehaviour
 {
-    private const float PlatformSpeed = 0.025f;
+    private const float PlatformSpeed = 0.04f;
     private bool _playerOnBoard = false;
     private PlatformDirections _currentDirection;
     private Transform _playerTransform;

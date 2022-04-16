@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player
@@ -71,7 +72,15 @@ namespace Player
             viewPosition.y = Mathf.Clamp(viewPosition.y, (_screenBounds.y * -1) + _playerHeight, _screenBounds.y - _playerHeight);
             transform.position = viewPosition;
         }
-    
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("Boss"))
+            {
+                _overseer.GetComponent<PlayerDeathController>().KillPlayer();
+            }
+        }
+
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.CompareTag("StartingPlatform"))

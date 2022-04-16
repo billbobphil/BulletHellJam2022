@@ -10,6 +10,8 @@ TagManager:
   - StartingPlatform
   - EndingPlatform
   - Bullet
+  - Boss
+  - Weakspot
   layers:
   - Default
   - TransparentFX

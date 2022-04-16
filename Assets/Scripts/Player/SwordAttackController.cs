@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -49,6 +51,15 @@ namespace Player
             MakeSwordInactive();
             yield return new WaitForSecondsRealtime(.3f);
             MakeSwordAvailable();
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("Weakspot"))
+            {
+                Debug.Log("BOSS KILL");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }
