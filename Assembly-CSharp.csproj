@@ -41,12 +41,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\PlatformMovementRestriction.cs" />
+     <Compile Include="Assets\Scripts\Overseer\PlatformMovementRestriction.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovementController.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossController.cs" />
      <Compile Include="Assets\Scripts\PlatformDirectionNodeController.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerDeathController.cs" />
-     <Compile Include="Assets\Scripts\BattleStartController.cs" />
+     <Compile Include="Assets\Scripts\Overseer\PlayerDeathController.cs" />
+     <Compile Include="Assets\Scripts\Overseer\BattleStartController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerOnPlatformController.cs" />
      <Compile Include="Assets\Scripts\Guns\GunController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBulletCollisionController.cs" />
@@ -59,6 +59,33 @@
      <Compile Include="Assets\Scripts\Guns\SpreadGunController.cs" />
      <Compile Include="Assets\Scripts\Bullets\BasicBulletController.cs" />
      <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
+     <Compile Include="Assets\Scripts\Overseer\UIManager.cs" />
+     <Compile Include="Assets\Scripts\Overseer\GameStopController.cs" />
+     <Compile Include="Assets\Scripts\Overseer\VictoryController.cs" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Fonts\Share_Tech_Mono\OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\Fonts\Rubik_Wet_Paint\OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>E:\UnityEditors\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

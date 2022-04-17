@@ -19,6 +19,7 @@ namespace Bosses
         }
 
         public abstract void CommenceBattleStart();
+        public abstract void BecomeInactive();
         protected abstract void AdditionalStartRoutineLogic();
     }
 }

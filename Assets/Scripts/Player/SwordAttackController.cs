@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Overseer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -73,7 +74,7 @@ namespace Player
             if (col.CompareTag("Weakspot"))
             {
                 _myAudioSources[0].Play();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                GameObject.FindWithTag("Overseer").GetComponent<VictoryController>().VictoryAchieved();
             }
 
             if (col.CompareTag("PlatformControlNode"))

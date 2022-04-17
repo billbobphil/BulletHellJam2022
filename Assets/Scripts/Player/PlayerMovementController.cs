@@ -1,4 +1,5 @@
 using System;
+using Overseer;
 using UnityEngine;
 
 namespace Player
@@ -12,6 +13,7 @@ namespace Player
         private Vector2 _screenBounds;
         private SwordAttackController _swordAttackController;
         private GameObject _overseer;
+        private bool _playerCanMove = true;
 
         private void Awake()
         {
@@ -31,32 +33,38 @@ namespace Player
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (_playerCanMove)
             {
-                _swordAttackController.SwingSword();
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    _swordAttackController.SwingSword();
+                }
             }
         }
     
         private void FixedUpdate()
         {
-            if (Input.GetKey(KeyCode.W))
+            if (_playerCanMove)
             {
-                transform.Translate(0, PlayerSpeed, 0);
-            }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    transform.Translate(0, PlayerSpeed, 0);
+                }
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.Translate(-PlayerSpeed, 0, 0);
-            }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    transform.Translate(-PlayerSpeed, 0, 0);
+                }
 
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(PlayerSpeed, 0, 0);
-            }
-        
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.Translate(0, -PlayerSpeed, 0);
+                if (Input.GetKey(KeyCode.D))
+                {
+                    transform.Translate(PlayerSpeed, 0, 0);
+                }
+    
+                if (Input.GetKey(KeyCode.S))
+                {
+                    transform.Translate(0, -PlayerSpeed, 0);
+                }   
             }
         }
 
@@ -87,6 +95,11 @@ namespace Player
             {
                 _overseer.GetComponent<BattleStartController>().Begin();
             }
+        }
+
+        public void SetPlayerCanMove(bool canMove)
+        {
+            _playerCanMove = canMove;
         }
     }
 }

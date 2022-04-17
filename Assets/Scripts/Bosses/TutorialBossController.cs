@@ -85,7 +85,13 @@ public class TutorialBossController : BossController
 
     private IEnumerator SwitchToSpreadGun()
     {
-        yield return new WaitForSecondsRealtime(8);
+        yield return new WaitForSecondsRealtime(10);
         ChangeBossState(BossState.SpreadGun);
+    }
+    
+    public override void BecomeInactive()
+    {
+        ChangeBossState(BossState.Passive);
+        DisableAllGuns();
     }
 }
