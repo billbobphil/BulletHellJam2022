@@ -7,12 +7,18 @@ namespace Guns
     {
         public GameObject bullet;
         public float fireRate;
-        protected bool _isGunOn = false;
+        protected bool IsGunOn = false;
         private IEnumerator _fireCoroutine;
+        private AudioSource _myAudioSource;
 
+        private void Awake()
+        {
+            _myAudioSource = gameObject.GetComponent<AudioSource>();
+        }
+        
         public void TurnOn()
         {
-            _isGunOn = true;
+            IsGunOn = true;
             if (_fireCoroutine == null)
             {
                 _fireCoroutine = Fire();
@@ -22,7 +28,7 @@ namespace Guns
 
         public void TurnOff()
         {
-            _isGunOn = false;
+            IsGunOn = false;
             if (_fireCoroutine != null)
             {
                 StopCoroutine(_fireCoroutine);
@@ -32,9 +38,10 @@ namespace Guns
 
         protected IEnumerator Fire()
         {
-            while (_isGunOn)
+            while (IsGunOn)
             {
                 yield return new WaitForSecondsRealtime(fireRate);
+                _myAudioSource.Play();
                 CreateBullets();
             }
         }
