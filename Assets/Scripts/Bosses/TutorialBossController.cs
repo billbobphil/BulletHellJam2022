@@ -17,6 +17,12 @@ public class TutorialBossController : BossController
     
     private BossState _bossState = BossState.Passive;
     private bool _hasStarted = false;
+    private BackgroundMusicController _backgroundMusicController;
+
+    private void Awake()
+    {
+        _backgroundMusicController = GameObject.FindWithTag("MainCamera").GetComponent<BackgroundMusicController>();
+    }
     
     protected override void AdditionalStartRoutineLogic()
     {
@@ -36,6 +42,16 @@ public class TutorialBossController : BossController
     private void ChangeBossState(BossState newState)
     {
         _bossState = newState;
+
+        if (newState == BossState.Passive)
+        {
+            _backgroundMusicController.SwitchToPassiveTrack();
+        }
+        else
+        {
+            _backgroundMusicController.SwitchToActionTrack();
+        }
+        
         Act();
     }
 

@@ -8,8 +8,8 @@ public class SpreadGunController : GunController
 {
     protected override void CreateBullets()
     {
-        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.Euler(0,0,0));
-        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.Euler(0,0,30));
-        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.Euler(0,0,-30));
+        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 1, 0), Quaternion.Euler(0,0,0));
+        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 1, 0), Quaternion.Euler(0,0,30));
+        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 1, 0), Quaternion.Euler(0,0,-30));
     }
 }
