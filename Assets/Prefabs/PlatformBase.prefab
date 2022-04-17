@@ -541,6 +541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftControl
       objectReference: {fileID: 0}
+    - target: {fileID: 1305083180811394668, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
+      propertyPath: m_TagString
+      value: PlatformControlNode
+      objectReference: {fileID: 0}
     - target: {fileID: 1305083180811394671, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -606,6 +610,10 @@ PrefabInstance:
     - target: {fileID: 1305083180811394668, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
       propertyPath: m_Name
       value: ForwardControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305083180811394668, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
+      propertyPath: m_TagString
+      value: PlatformControlNode
       objectReference: {fileID: 0}
     - target: {fileID: 1305083180811394671, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
       propertyPath: m_RootOrder
@@ -673,6 +681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightControl
       objectReference: {fileID: 0}
+    - target: {fileID: 1305083180811394668, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
+      propertyPath: m_TagString
+      value: PlatformControlNode
+      objectReference: {fileID: 0}
     - target: {fileID: 1305083180811394671, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -738,6 +750,10 @@ PrefabInstance:
     - target: {fileID: 1305083180811394668, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
       propertyPath: m_Name
       value: BackwardsControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305083180811394668, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
+      propertyPath: m_TagString
+      value: PlatformControlNode
       objectReference: {fileID: 0}
     - target: {fileID: 1305083180811394671, guid: 71ed812b607a1d142b338395fdf49888, type: 3}
       propertyPath: m_RootOrder

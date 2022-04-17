@@ -16,6 +16,7 @@ TagManager:
   - TopPlatform
   - LeftPlatform
   - RightPlatform
+  - PlatformControlNode
   layers:
   - Default
   - TransparentFX

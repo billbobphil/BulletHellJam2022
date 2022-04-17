@@ -17,13 +17,19 @@ public class PlatformDirectionNodeController : MonoBehaviour
         _mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    // private void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.CompareTag("Sword"))
+    //     {
+    //         _parentPlatformMovementController.ChangeDirection(myDirection);
+    //         _parentPlatformMovementController.ToggleActiveControlNode(this);
+    //     }
+    // }
+
+    public void HitBySword()
     {
-        if (col.CompareTag("Sword"))
-        {
-            _parentPlatformMovementController.ChangeDirection(myDirection);
-            _parentPlatformMovementController.ToggleActiveControlNode(this);
-        }
+        _parentPlatformMovementController.ChangeDirection(myDirection);
+        _parentPlatformMovementController.ToggleActiveControlNode(this);
     }
 
     public void MakeActivated()

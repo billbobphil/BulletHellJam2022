@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +12,14 @@ namespace Player
         private bool _swordAvailable = false;
         private Collider2D _collider;
         private SpriteRenderer _spriteRenderer;
+        private List<AudioSource> _myAudioSources;
+        private bool _hitSomethingRelevant = false;
 
+        private void Awake()
+        {
+            _myAudioSources = gameObject.GetComponents<AudioSource>().ToList();
+        }
+        
         private void Start()
         {
             _collider = gameObject.GetComponent<Collider2D>();
@@ -42,6 +51,10 @@ namespace Player
                 _collider.enabled = true;
                 _spriteRenderer.enabled = true;
                 StartCoroutine(CancelSwordHitbox());
+                if (!_hitSomethingRelevant)
+                {
+                    _myAudioSources[1].Play();
+                }
             }
         }
     
@@ -51,14 +64,22 @@ namespace Player
             MakeSwordInactive();
             yield return new WaitForSecondsRealtime(.3f);
             MakeSwordAvailable();
+            _hitSomethingRelevant = false;
         }
 
         private void OnTriggerEnter2D(Collider2D col)
         {
+            _hitSomethingRelevant = true;
             if (col.CompareTag("Weakspot"))
             {
-                Debug.Log("BOSS KILL");
+                _myAudioSources[0].Play();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
+            if (col.CompareTag("PlatformControlNode"))
+            {
+                _myAudioSources[0].Play();
+                col.gameObject.GetComponent<PlatformDirectionNodeController>().HitBySword();
             }
         }
     }
