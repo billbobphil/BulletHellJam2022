@@ -53,12 +53,12 @@
      <Compile Include="Assets\Scripts\PlatformMovementController.cs" />
      <Compile Include="Assets\Scripts\Player\SwordPositionController.cs" />
      <Compile Include="Assets\Scripts\Guns\BasicGunController.cs" />
+     <Compile Include="Assets\Scripts\BackgroundMusicController.cs" />
      <Compile Include="Assets\Scripts\PlatformEdgeColliderController.cs" />
      <Compile Include="Assets\Scripts\Bosses\TutorialBossController.cs" />
      <Compile Include="Assets\Scripts\Guns\SpreadGunController.cs" />
      <Compile Include="Assets\Scripts\Bullets\BasicBulletController.cs" />
      <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
-     <Compile Include="Assets\Scripts\BackgroundMusicController.cs" />
      <Reference Include="UnityEngine">
      <HintPath>E:\UnityEditors\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
