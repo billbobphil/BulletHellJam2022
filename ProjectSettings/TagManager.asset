@@ -19,6 +19,8 @@ TagManager:
   - PlatformControlNode
   - GameoverUI
   - VictoryUI
+  - TutorialManager
+  - TutorialUI
   layers:
   - Default
   - TransparentFX

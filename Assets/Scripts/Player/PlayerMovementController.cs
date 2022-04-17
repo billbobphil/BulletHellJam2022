@@ -6,7 +6,7 @@ namespace Player
 {
     public class PlayerMovementController : MonoBehaviour
     {
-        private const float PlayerSpeed = .1f;
+        private const float PlayerSpeed = .15f;
         private float _playerWidth;
         private float _playerHeight;
         private Camera _mainCamera;

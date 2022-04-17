@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Bosses;
 using Guns;
+using Tutorial;
 using UnityEngine;
 using Object = System.Object;
 
@@ -33,6 +34,13 @@ public class TutorialBossController : BossController
     {
         if (!_hasStarted)
         {
+            GameObject tutorialManager = GameObject.FindWithTag("TutorialManager");
+            
+            if (tutorialManager != null)
+            {
+                tutorialManager.GetComponent<TutorialManagerScript>().EndTutorial();    
+            }
+            
             _hasStarted = true;
             ChangeBossState(BossState.BasicGun);
             StartCoroutine(SwitchToSpreadGun());

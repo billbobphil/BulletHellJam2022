@@ -1,3 +1,4 @@
+using Bosses;
 using UnityEngine;
 
 namespace Overseer
@@ -8,7 +9,7 @@ namespace Overseer
 
         public void Begin()
         {
-            levelBoss.GetComponent<TutorialBossController>().CommenceBattleStart();
+            levelBoss.GetComponent<BossController>().CommenceBattleStart();
         }
     
     }
