@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Guns;
 using UnityEngine;
 
 namespace Bosses
@@ -7,6 +8,12 @@ namespace Bosses
     {
         public List<GameObject> gunPrefabs;
         protected List<GameObject> guns = new();
+        protected BackgroundMusicController BackgroundMusicController;
+
+        public void Awake()
+        {
+            BackgroundMusicController = GameObject.FindWithTag("MainCamera").GetComponent<BackgroundMusicController>();
+        }
         
         public void Start()
         {
@@ -16,6 +23,14 @@ namespace Bosses
             }
 
             AdditionalStartRoutineLogic();
+        }
+        
+        protected void DisableAllGuns()
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.GetComponent<GunController>().TurnOff();
+            }
         }
 
         public abstract void CommenceBattleStart();

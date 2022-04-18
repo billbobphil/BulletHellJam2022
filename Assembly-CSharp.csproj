@@ -60,10 +60,14 @@
      <Compile Include="Assets\Scripts\Bosses\TutorialBossController.cs" />
      <Compile Include="Assets\Scripts\Overseer\UIManager.cs" />
      <Compile Include="Assets\Scripts\Guns\SpreadGunController.cs" />
+     <Compile Include="Assets\Scripts\Overseer\BackgroundColorController.cs" />
      <Compile Include="Assets\Scripts\Bullets\BasicBulletController.cs" />
      <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
      <Compile Include="Assets\Scripts\Overseer\GameStopController.cs" />
-     <Compile Include="Assets\Scripts\Overseer\BackgroundColorController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossOne\BossOneController.cs" />
+     <Compile Include="Assets\Scripts\Guns\BigBallExplosionController.cs" />
+     <Compile Include="Assets\Scripts\Bullets\TrajectoryChangeBulletController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossOne\BossOneMidLevelTriggerController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

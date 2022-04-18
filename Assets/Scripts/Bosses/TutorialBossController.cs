@@ -17,15 +17,9 @@ public class TutorialBossController : BossController
     }
     
     private BossState _bossState = BossState.Passive;
-    private bool _hasStarted = false;
-    private BackgroundMusicController _backgroundMusicController;
-    private IEnumerator switchToSpreadGunRoutine;
+    private bool _hasStarted;
+    private IEnumerator _switchToSpreadGunRoutine;
 
-    private void Awake()
-    {
-        _backgroundMusicController = GameObject.FindWithTag("MainCamera").GetComponent<BackgroundMusicController>();
-    }
-    
     protected override void AdditionalStartRoutineLogic()
     {
         ChangeBossState(BossState.Passive);
@@ -44,8 +38,8 @@ public class TutorialBossController : BossController
             
             _hasStarted = true;
             ChangeBossState(BossState.BasicGun);
-            switchToSpreadGunRoutine = SwitchToSpreadGun();
-            StartCoroutine(switchToSpreadGunRoutine);
+            _switchToSpreadGunRoutine = SwitchToSpreadGun();
+            StartCoroutine(_switchToSpreadGunRoutine);
         }
     }
 
@@ -55,11 +49,11 @@ public class TutorialBossController : BossController
 
         if (newState == BossState.Passive)
         {
-            _backgroundMusicController.SwitchToPassiveTrack();
+            BackgroundMusicController.SwitchToPassiveTrack();
         }
         else
         {
-            _backgroundMusicController.SwitchToActionTrack();
+            BackgroundMusicController.SwitchToActionTrack();
         }
         
         Act();
@@ -85,14 +79,6 @@ public class TutorialBossController : BossController
         }
     }
 
-    private void DisableAllGuns()
-    {
-        foreach (GameObject gun in guns)
-        {
-            gun.GetComponent<GunController>().TurnOff();
-        }
-    }
-
     private IEnumerator SwitchToSpreadGun()
     {
         yield return new WaitForSecondsRealtime(10);
@@ -101,7 +87,7 @@ public class TutorialBossController : BossController
     
     public override void BecomeInactive()
     {
-        StopCoroutine(switchToSpreadGunRoutine);
+        StopCoroutine(_switchToSpreadGunRoutine);
         ChangeBossState(BossState.Passive);
         DisableAllGuns();
     }
