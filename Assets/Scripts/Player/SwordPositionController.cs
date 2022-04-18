@@ -6,6 +6,7 @@ namespace Player
     public class SwordPositionController : MonoBehaviour
     {
         private Camera _mainCamera;
+        private bool _isSwordActive = false;
     
         private void Start()
         {
@@ -14,7 +15,10 @@ namespace Player
 
         private void FixedUpdate()
         {
-            AimSwordAtMouse();
+            if (!_isSwordActive)
+            {
+                AimSwordAtMouse();
+            }
         }
 
         private void AimSwordAtMouse()
@@ -40,6 +44,11 @@ namespace Player
         
             sword.transform.localPosition = newSwordPosition;
             sword.transform.eulerAngles = newSwordAngle;
+        }
+
+        public void SetSwordIsActive(bool isSwordActive)
+        {
+            _isSwordActive = isSwordActive;
         }
     }
 }

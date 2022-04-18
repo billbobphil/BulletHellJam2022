@@ -15,6 +15,7 @@ namespace Player
         private SpriteRenderer _spriteRenderer;
         private List<AudioSource> _myAudioSources;
         private bool _hitSomethingRelevant = false;
+        private SwordPositionController _swordPositionController;
 
         private void Awake()
         {
@@ -25,29 +26,38 @@ namespace Player
         {
             _collider = gameObject.GetComponent<Collider2D>();
             _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            _swordPositionController = GetComponentInParent<SwordPositionController>();
+            DisableSword();
         }
 
         public void DisableSword()
         {
             _swordAvailable = true;
             MakeSwordInactive();
+            MakeSwordInvisible();
         }
 
         private void MakeSwordInactive()
         {
             _collider.enabled = false;
+        }
+
+        private void MakeSwordInvisible()
+        {
             _spriteRenderer.enabled = false;
         }
 
         private void MakeSwordAvailable()
         {
             _swordAvailable = true;
+            _swordPositionController.SetSwordIsActive(false);
         }
 
         public void SwingSword()
         {
             if (_swordAvailable)
             {
+                _swordPositionController.SetSwordIsActive(true);
                 _swordAvailable = false;
                 _collider.enabled = true;
                 _spriteRenderer.enabled = true;
@@ -61,8 +71,10 @@ namespace Player
     
         private IEnumerator CancelSwordHitbox()
         {
-            yield return new WaitForSecondsRealtime(0.3f);
+            yield return new WaitForSecondsRealtime(0.1f);
             MakeSwordInactive();
+            yield return new WaitForSecondsRealtime(0.2f);
+            MakeSwordInvisible();
             yield return new WaitForSecondsRealtime(.3f);
             MakeSwordAvailable();
             _hitSomethingRelevant = false;
