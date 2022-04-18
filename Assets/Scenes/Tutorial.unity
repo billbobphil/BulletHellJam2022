@@ -15016,10 +15016,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4011621676246606786, guid: 4a37471cb292f9d4dba3aeb7665cac41, type: 3}
-      propertyPath: m_TagString
-      value: Weakspot
-      objectReference: {fileID: 0}
     - target: {fileID: 4011621676279088992, guid: 4a37471cb292f9d4dba3aeb7665cac41, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -15396,18 +15392,6 @@ PrefabInstance:
     - target: {fileID: 7323492588140772068, guid: f4d65169c6b691540a36678b5dca4e49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7323492588140772069, guid: f4d65169c6b691540a36678b5dca4e49, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7323492588140772069, guid: f4d65169c6b691540a36678b5dca4e49, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7323492588140772069, guid: f4d65169c6b691540a36678b5dca4e49, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7323492588140772070, guid: f4d65169c6b691540a36678b5dca4e49, type: 3}
       propertyPath: m_Name
