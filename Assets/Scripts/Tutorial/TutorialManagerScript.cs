@@ -15,7 +15,9 @@ namespace Tutorial
         private bool _shouldListenForMovement = false;
         private bool _shouldListenForAttack = false;
         private bool _shouldListenForSpacebar = false;
-
+        
+        private AudioSource _myAudioSource;
+        
         private enum TutorialStep
         {
             TeachMovement,
@@ -33,6 +35,7 @@ namespace Tutorial
             controlNodeTutorialPanel.SetActive(false);
             weakspotTutorialPanel.SetActive(false);
             startTutorialPanel.SetActive(false);
+            _myAudioSource = GetComponentInParent<AudioSource>();
         }
 
         private void Start()
@@ -55,22 +58,26 @@ namespace Tutorial
                     _shouldListenForMovement = true;
                     break;
                 case TutorialStep.TeachAttack:
+                    _myAudioSource.Play();
                     _shouldListenForMovement = false;
                     movementTutorialPanel.SetActive(false);
                     attackTutorialPanel.SetActive(true);
                     _shouldListenForAttack = true;
                     break;
                 case TutorialStep.TeachWeakspot:
+                    _myAudioSource.Play();
                     _shouldListenForAttack = false;
                     attackTutorialPanel.SetActive(false);
                     weakspotTutorialPanel.SetActive(true);
                     _shouldListenForSpacebar = true;
                     break;
                 case TutorialStep.TeachControlNodes:
+                    _myAudioSource.Play();
                     weakspotTutorialPanel.SetActive(false);
                     controlNodeTutorialPanel.SetActive(true);
                     break;
                 case TutorialStep.StartTutorial:
+                    _myAudioSource.Play();
                     controlNodeTutorialPanel.SetActive(false);
                     startTutorialPanel.SetActive(true);
                     break;
@@ -83,14 +90,11 @@ namespace Tutorial
 
         private void LateUpdate()
         {
-            if (_shouldListenForMovement)
+            if (_shouldListenForMovement && Input.GetKeyDown(KeyCode.Space))
             {
-                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
-                {
-                     SetTutorialStep(TutorialStep.TeachAttack);
-                }
+                SetTutorialStep(TutorialStep.TeachAttack);
             }
-            else if (_shouldListenForAttack && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
+            else if (_shouldListenForAttack && Input.GetKeyDown(KeyCode.Space))
             {
                 SetTutorialStep(TutorialStep.TeachWeakspot);
             }

@@ -7,7 +7,8 @@ namespace Overseer
     public class PlayerDeathController : MonoBehaviour
     {
         private bool _playerHasDied = false;
-    
+        public AudioClip deathSoundEffect;
+
         public void KillPlayer()
         {
             Destroy(GameObject.FindWithTag("Player"));
@@ -15,6 +16,10 @@ namespace Overseer
             gameObject.GetComponent<GameStopController>().StopGame();
             
             gameObject.GetComponent<UIManager>().ShowGameOverScreen();
+            
+            AudioSource audioSource = gameObject.GetComponentInParent<AudioSource>();
+            audioSource.clip = deathSoundEffect;
+            audioSource.Play();
 
             _playerHasDied = true;
         }

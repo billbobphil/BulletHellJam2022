@@ -8,12 +8,16 @@ namespace Overseer
     public class VictoryController : MonoBehaviour
     {
         private bool _isVictoryAchieved = false;
+        public AudioClip victorySoundEffect;
         
         public void VictoryAchieved()
         {
             GameObject.FindWithTag("Player").GetComponent<PlayerMovementController>().SetPlayerCanMove(false);
             gameObject.GetComponent<GameStopController>().StopGame();
             gameObject.GetComponent<UIManager>().ShowVictoryScreen();
+            AudioSource audioSource = gameObject.GetComponentInParent<AudioSource>();
+            audioSource.clip = victorySoundEffect;
+            audioSource.Play();
             _isVictoryAchieved = true;
         }
 

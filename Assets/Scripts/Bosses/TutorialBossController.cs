@@ -19,6 +19,7 @@ public class TutorialBossController : BossController
     private BossState _bossState = BossState.Passive;
     private bool _hasStarted = false;
     private BackgroundMusicController _backgroundMusicController;
+    private IEnumerator switchToSpreadGunRoutine;
 
     private void Awake()
     {
@@ -43,7 +44,8 @@ public class TutorialBossController : BossController
             
             _hasStarted = true;
             ChangeBossState(BossState.BasicGun);
-            StartCoroutine(SwitchToSpreadGun());
+            switchToSpreadGunRoutine = SwitchToSpreadGun();
+            StartCoroutine(switchToSpreadGunRoutine);
         }
     }
 
@@ -99,6 +101,7 @@ public class TutorialBossController : BossController
     
     public override void BecomeInactive()
     {
+        StopCoroutine(switchToSpreadGunRoutine);
         ChangeBossState(BossState.Passive);
         DisableAllGuns();
     }
