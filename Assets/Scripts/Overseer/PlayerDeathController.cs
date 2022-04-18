@@ -19,6 +19,7 @@ namespace Overseer
             
             AudioSource audioSource = gameObject.GetComponentInParent<AudioSource>();
             audioSource.clip = deathSoundEffect;
+            audioSource.volume = 1f;
             audioSource.Play();
 
             _playerHasDied = true;

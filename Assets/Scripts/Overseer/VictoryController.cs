@@ -17,6 +17,7 @@ namespace Overseer
             gameObject.GetComponent<UIManager>().ShowVictoryScreen();
             AudioSource audioSource = gameObject.GetComponentInParent<AudioSource>();
             audioSource.clip = victorySoundEffect;
+            audioSource.volume = .5f;
             audioSource.Play();
             _isVictoryAchieved = true;
         }
