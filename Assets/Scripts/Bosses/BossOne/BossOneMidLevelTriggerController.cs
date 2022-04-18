@@ -12,7 +12,7 @@ namespace Bosses.BossOne
             if (!_hasBeenTriggered && col.CompareTag("Player"))
             {
                 _hasBeenTriggered = true;
-                GetComponentInParent<BossOneController>().ChangeBossState(BossOneController.BossOneState.NextGunState);
+                GetComponentInParent<BossOneController>().ChangeBossState(BossOneController.BossOneState.LineGun);
             }
         }
     }

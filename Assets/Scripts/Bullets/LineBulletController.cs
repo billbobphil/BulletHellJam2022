@@ -2,17 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Bullets;
+using Unity.VisualScripting;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class BasicBulletController : BulletController
+public class LineBulletController : BulletController
 {
+    [NonSerialized]
+    public Vector3 BulletSpeed;
+    
     protected override void StartLogicHook()
     {
     }
 
     private void FixedUpdate()
     {
-        transform.Translate(0, -.5f, 0);
+        transform.Translate(BulletSpeed);
     }
 }

@@ -68,6 +68,9 @@
      <Compile Include="Assets\Scripts\Guns\BigBallExplosionController.cs" />
      <Compile Include="Assets\Scripts\Bullets\TrajectoryChangeBulletController.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossOne\BossOneMidLevelTriggerController.cs" />
+     <Compile Include="Assets\Scripts\Guns\HorizontalLineGunController.cs" />
+     <Compile Include="Assets\Scripts\Bullets\LineBulletController.cs" />
+     <Compile Include="Assets\Scripts\Bullets\BulletController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

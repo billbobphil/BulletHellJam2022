@@ -9,7 +9,7 @@ namespace Bosses.BossOne
         {
             Passive,
             ExplosionGun,
-            NextGunState
+            LineGun
         }
 
         private BossOneState _bossOneState = BossOneState.Passive;
@@ -46,7 +46,7 @@ namespace Bosses.BossOne
                     DisableAllGuns();
                     guns[0].GetComponent<GunController>().TurnOn();
                     break;
-                case BossOneState.NextGunState:
+                case BossOneState.LineGun:
                     DisableAllGuns();
                     guns[1].GetComponent<GunController>().TurnOn();
                     break;

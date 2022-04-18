@@ -31,7 +31,6 @@ namespace Player
 
             if (platformColliders.Count == 0)
             {
-                Debug.Log("Death from platform count");
                 _playerDeathController.KillPlayer();
             }
         }

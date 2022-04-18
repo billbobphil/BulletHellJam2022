@@ -9,7 +9,13 @@ namespace Overseer
     {
         private bool _isVictoryAchieved = false;
         public AudioClip victorySoundEffect;
-        
+        private int _currentLevelIndex;
+
+        private void Start()
+        {
+            _currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        }
+
         public void VictoryAchieved()
         {
             GameObject.FindWithTag("Player").GetComponent<PlayerMovementController>().SetPlayerCanMove(false);
@@ -28,8 +34,7 @@ namespace Overseer
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //TODO: Progress to next level
-                Debug.Log("Progress to next level from Victory");
+                SceneManager.LoadScene(_currentLevelIndex + 1);
             }
             else if (Input.GetKeyDown(KeyCode.Backspace))
             {

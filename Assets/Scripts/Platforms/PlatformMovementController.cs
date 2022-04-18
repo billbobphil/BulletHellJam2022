@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformMovementController : MonoBehaviour
 {
-    private const float PlatformSpeed = 0.04f;
+    public float platformSpeed;
     private bool _playerOnBoard = false;
     private PlatformDirections _currentDirection;
     private Transform _playerTransform;
@@ -46,16 +46,16 @@ public class PlatformMovementController : MonoBehaviour
         switch (_currentDirection)
         {
             case(PlatformDirections.Forward):
-                movementDirection = _canMoveForward ? new Vector3(0, PlatformSpeed, 0) : new Vector3(0, 0, 0);
+                movementDirection = _canMoveForward ? new Vector3(0, platformSpeed, 0) : new Vector3(0, 0, 0);
                 break;
             case(PlatformDirections.Backwards):
-                movementDirection = _canMoveBackwards ? new Vector3(0, -PlatformSpeed, 0) : new Vector3(0, 0, 0);
+                movementDirection = _canMoveBackwards ? new Vector3(0, -platformSpeed, 0) : new Vector3(0, 0, 0);
                 break;
             case(PlatformDirections.Left):
-                movementDirection = _canMoveLeft ? new Vector3(-PlatformSpeed,0, 0) : new Vector3(0,0,0);
+                movementDirection = _canMoveLeft ? new Vector3(-platformSpeed,0, 0) : new Vector3(0,0,0);
                 break;
             case(PlatformDirections.Right):
-                movementDirection = _canMoveRight ? new Vector3(PlatformSpeed, 0, 0) : new Vector3(0,0,0);
+                movementDirection = _canMoveRight ? new Vector3(platformSpeed, 0, 0) : new Vector3(0,0,0);
                 break;
             case(PlatformDirections.Stationary):
                 movementDirection = new Vector3(0, 0, 0);
