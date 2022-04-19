@@ -14,7 +14,7 @@ public class TrajectoryChangeBulletController : BulletController
 
     protected override void StartLogicHook()
     {
-        _currentTrajectory = new Vector3(0, -.15f, 0);
+        _currentTrajectory = myGunController.bulletSpeed;
         StartCoroutine(ChangeTrajectory());
     }
 

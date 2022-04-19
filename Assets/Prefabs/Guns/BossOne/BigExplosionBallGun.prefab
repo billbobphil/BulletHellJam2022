@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7406684708888252010, guid: 17fa40033063f9f4fa2222b6937b9f02, type: 3}
   fireRate: 0.5
+  bulletSpeed: {x: 0, y: -0.15, z: 0}
   numberOfGroups: 3
 --- !u!82 &3520366143219900853
 AudioSource:

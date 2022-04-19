@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Bullets;
+using Guns;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,6 +14,6 @@ public class BasicBulletController : BulletController
 
     private void FixedUpdate()
     {
-        transform.Translate(0, -.5f, 0);
+        transform.Translate(myGunController.bulletSpeed);
     }
 }

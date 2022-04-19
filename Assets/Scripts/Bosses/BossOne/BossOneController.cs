@@ -40,7 +40,7 @@ namespace Bosses.BossOne
             switch (_bossOneState)
             {
                 case BossOneState.Passive:
-                    guns[0].GetComponent<GunController>().TurnOff();
+                    DisableAllGuns();
                     break;
                 case BossOneState.ExplosionGun:
                     DisableAllGuns();

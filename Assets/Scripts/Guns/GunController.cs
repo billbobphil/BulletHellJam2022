@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Bullets;
 using UnityEngine;
 
 namespace Guns
@@ -10,6 +11,7 @@ namespace Guns
         protected bool IsGunOn = false;
         private IEnumerator _fireCoroutine;
         private AudioSource _myAudioSource;
+        public Vector3 bulletSpeed;
 
         private void Awake()
         {

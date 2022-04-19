@@ -1,10 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using Guns;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Bullets
 {
     public abstract class BulletController : MonoBehaviour
     {
         private Color _myColor;
+        [NonSerialized]
+        public Vector3 BulletSpeed;
+
+        [NonSerialized] public GunController myGunController;
+        
     
         protected void Start()
         {

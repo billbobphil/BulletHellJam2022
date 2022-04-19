@@ -2201,7 +2201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Step off the safety off the starting platform to begin.
+  m_text: Step off the safety of the starting platform to begin.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2ec8033624a2516459f3a414c14bdb96, type: 2}
   m_sharedMaterial: {fileID: -5567892138126344910, guid: 2ec8033624a2516459f3a414c14bdb96, type: 2}

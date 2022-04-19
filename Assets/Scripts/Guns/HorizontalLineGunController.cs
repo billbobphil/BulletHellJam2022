@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Bullets;
 using Guns;
 using UnityEngine;
 
 public class HorizontalLineGunController : GunController
 {
-    public Vector3 lineBulletSpeed;
     public int numberOfBulletsPerLine;
     public int bulletGap;
     private float _offsetFromZero = 0;
@@ -17,22 +17,24 @@ public class HorizontalLineGunController : GunController
         
         for (int i = 0; i < numberOfBulletsPerLine; i++)
         {
-            GameObject tempBullet;
+            
             if (i == 0)
             {
-                tempBullet = Instantiate(bullet, new Vector3(transform.position.x + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                
+                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                tempbullet.GetComponent<BulletController>().myGunController = this;
             }
             else if (i % 2 == 0)
             {
-                tempBullet = Instantiate(bullet, new Vector3(transform.position.x + currentBulletGap + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x + currentBulletGap + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                tempbullet.GetComponent<BulletController>().myGunController = this;
                 currentBulletGap += bulletGap;
             }
             else
             {
-                tempBullet = Instantiate(bullet, new Vector3(transform.position.x - currentBulletGap + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x - currentBulletGap + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                tempbullet.GetComponent<BulletController>().myGunController = this;
             }
-
-            tempBullet.GetComponent<LineBulletController>().BulletSpeed = lineBulletSpeed;
         }
 
         if (_cycleCount == 3)

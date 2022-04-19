@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Bullets;
+using UnityEngine;
 
 namespace Guns
 {
@@ -66,29 +67,34 @@ namespace Guns
         private void GenerateBulletGroup(Quaternion angle)
         {
             //top
-            GameObject tempbullet;
-            tempbullet = Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 1.5f, 0), angle);
+            GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 1.5f, 0), angle);
             tempbullet.gameObject.GetComponent<TrajectoryChangeBulletController>().PostChangeTrajectory = new Vector3(0, -.25f, 0);
+            tempbullet.GetComponent<BulletController>().myGunController = this;
 
             //bottom
             tempbullet = Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - .5f, 0), angle);
             tempbullet.gameObject.GetComponent<TrajectoryChangeBulletController>().PostChangeTrajectory = new Vector3(0, .25f, 0);
+            tempbullet.GetComponent<BulletController>().myGunController = this;
 
             //left
             tempbullet = Instantiate(bullet, new Vector3(transform.position.x + .5f, transform.position.y -1f, 0), angle);
             tempbullet.gameObject.GetComponent<TrajectoryChangeBulletController>().PostChangeTrajectory = new Vector3(-.25f, -.25f, 0);
+            tempbullet.GetComponent<BulletController>().myGunController = this;
 
             //right
             tempbullet = Instantiate(bullet, new Vector3(transform.position.x - .5f, transform.position.y -1f, 0), angle);
             tempbullet.gameObject.GetComponent<TrajectoryChangeBulletController>().PostChangeTrajectory = new Vector3(.25f, -.25f, 0);
+            tempbullet.GetComponent<BulletController>().myGunController = this;
 
             //mid-right
             tempbullet = Instantiate(bullet, new Vector3(transform.position.x + .3f, transform.position.y - .75f, 0), angle);
             tempbullet.gameObject.GetComponent<TrajectoryChangeBulletController>().PostChangeTrajectory = new Vector3(-.125f, -.25f, 0);
+            tempbullet.GetComponent<BulletController>().myGunController = this;
 
             //mid-left
             tempbullet = Instantiate(bullet, new Vector3(transform.position.x - .3f, transform.position.y - .75f, 0), angle);
             tempbullet.gameObject.GetComponent<TrajectoryChangeBulletController>().PostChangeTrajectory = new Vector3(.125f, -.25f, 0);
+            tempbullet.GetComponent<BulletController>().myGunController = this;
         }
     }
 }

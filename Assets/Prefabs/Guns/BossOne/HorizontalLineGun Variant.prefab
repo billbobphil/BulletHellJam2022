@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4718772902360309887, guid: 37535a73d58b473489523f762aeab4d7, type: 3}
-  fireRate: 1.5
-  lineBulletSpeed: {x: 0, y: -0.075, z: 0}
+  fireRate: 1.25
+  bulletSpeed: {x: 0, y: -0.08, z: 0}
   numberOfBulletsPerLine: 15
   bulletGap: 3

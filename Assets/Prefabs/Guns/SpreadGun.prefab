@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6969080391086135946, guid: fbe7ecd0b01c4184baa9c218b3febb8b, type: 3}
   fireRate: 0.75
+  bulletSpeed: {x: 0, y: -0.5, z: 0}
 --- !u!82 &-1066215076646165408
 AudioSource:
   m_ObjectHideFlags: 0
