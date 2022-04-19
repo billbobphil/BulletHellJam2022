@@ -60,7 +60,6 @@ namespace Bosses.BossTwo
                 case BossTwoState.PhaseOne:
                     DisableAllGuns();
                     guns[0].GetComponent<GunController>().TurnOn();
-                    guns[1].GetComponent<GunController>().TurnOn();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

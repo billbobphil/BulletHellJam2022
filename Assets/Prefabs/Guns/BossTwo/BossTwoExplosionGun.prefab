@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520366143219900855, guid: 222e63a9cacfb134fa7350f4e185be4c, type: 3}
       propertyPath: bulletSpeed.y
-      value: -0.015
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 3520366143219900855, guid: 222e63a9cacfb134fa7350f4e185be4c, type: 3}
       propertyPath: numberOfGroups

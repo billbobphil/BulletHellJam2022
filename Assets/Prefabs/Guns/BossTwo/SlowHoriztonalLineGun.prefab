@@ -9,7 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 266160349, guid: 5144ce1046816b449b7565af757bdca0, type: 3}
       propertyPath: fireRate
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 266160349, guid: 5144ce1046816b449b7565af757bdca0, type: 3}
+      propertyPath: bulletGap
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 266160349, guid: 5144ce1046816b449b7565af757bdca0, type: 3}
+      propertyPath: bulletSpeed.y
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035756347122072402, guid: 5144ce1046816b449b7565af757bdca0, type: 3}
       propertyPath: m_Name
