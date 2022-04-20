@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 public class SwerveBulletController : BulletController
 {
     private float _verticalMoveSpeed;
-    private const float Frequency = 1f;
-    private const float Magnitude = 3f;
+    private const float Frequency = 2f;
+    private const float Magnitude = 6f;
     private float _phase;
     private float _mySpawnTime;
 
@@ -25,6 +25,6 @@ public class SwerveBulletController : BulletController
     protected override void StartLogicHook()
     {
         _verticalMoveSpeed = myGunController.bulletSpeed.y;
-        _phase = Random.value;
+        _phase = Random.value * 10;
     }
 }

@@ -75,6 +75,8 @@
      <Compile Include="Assets\Scripts\Overseer\GameStopController.cs" />
      <Compile Include="Assets\Scripts\Guns\WaveGunController.cs" />
      <Compile Include="Assets\Scripts\Bullets\WaveBulletController.cs" />
+     <Compile Include="Assets\Scripts\Platforms\LevelThreeAutoPlatformController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossThree\BossThreeController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

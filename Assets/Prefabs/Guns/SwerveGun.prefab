@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 8264711795866163241, guid: 37eb7992e6ea6d441b2c966c3b9ae9fc, type: 3}
     - target: {fileID: 3701491005918861794, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: fireRate
-      value: 3.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 3701491005918861794, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: bulletSpeed.y
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7131723819410884451, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: m_Name
-      value: BasicGun
+      value: SwerveGun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b76572c86befb4eaef943394253f89, type: 3}
