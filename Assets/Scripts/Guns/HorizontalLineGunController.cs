@@ -21,18 +21,18 @@ public class HorizontalLineGunController : GunController
             if (i == 0)
             {
                 
-                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x + _offsetFromZero, transform.position.y + 2f, 0), new Quaternion());
                 tempbullet.GetComponent<BulletController>().myGunController = this;
             }
             else if (i % 2 == 0)
             {
-                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x + currentBulletGap + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x + currentBulletGap + _offsetFromZero, transform.position.y + 2f, 0), new Quaternion());
                 tempbullet.GetComponent<BulletController>().myGunController = this;
                 currentBulletGap += bulletGap;
             }
             else
             {
-                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x - currentBulletGap + _offsetFromZero, transform.position.y - 1, 0), new Quaternion());
+                GameObject tempbullet = Instantiate(bullet, new Vector3(transform.position.x - currentBulletGap + _offsetFromZero, transform.position.y + 2f, 0), new Quaternion());
                 tempbullet.GetComponent<BulletController>().myGunController = this;
             }
         }

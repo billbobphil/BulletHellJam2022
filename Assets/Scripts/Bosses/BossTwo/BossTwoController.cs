@@ -1,5 +1,7 @@
 ﻿using System;
 using Guns;
+using Unity.Mathematics;
+using UnityEngine;
 
 namespace Bosses.BossTwo
 {
@@ -59,7 +61,11 @@ namespace Bosses.BossTwo
                     break;
                 case BossTwoState.PhaseOne:
                     DisableAllGuns();
+                    guns.Add(Instantiate(gunPrefabs[0], new Vector3(transform.position.x - 17, transform.position.y - 18, 0), Quaternion.Euler(0, 0, 90)));
+                    guns[1].GetComponent<WaveGunController>().bulletGap = 5;
+                    guns[1].GetComponent<WaveGunController>().numberOfBulletsPerLine = 5;
                     guns[0].GetComponent<GunController>().TurnOn();
+                    guns[1].GetComponent<GunController>().TurnOn();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

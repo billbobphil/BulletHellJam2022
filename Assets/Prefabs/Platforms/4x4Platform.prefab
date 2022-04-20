@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431589031909283088, guid: 1357ac96965142d4d8e388236819d7f0, type: 3}
       propertyPath: platformSpeed
-      value: 0.08
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8431589031909283089, guid: 1357ac96965142d4d8e388236819d7f0, type: 3}
       propertyPath: m_Size.x

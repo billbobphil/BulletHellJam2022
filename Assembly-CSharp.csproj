@@ -48,7 +48,9 @@
      <Compile Include="Assets\Scripts\Platforms\PlatformDirectionNodeController.cs" />
      <Compile Include="Assets\Scripts\Overseer\PlayerDeathController.cs" />
      <Compile Include="Assets\Scripts\Overseer\BattleStartController.cs" />
+     <Compile Include="Assets\Scripts\Bullets\SwerveBulletController.cs" />
      <Compile Include="Assets\Scripts\Bullets\BulletController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossTwo\BossTwoController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerOnPlatformController.cs" />
      <Compile Include="Assets\Scripts\Guns\GunController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBulletCollisionController.cs" />
@@ -71,8 +73,8 @@
      <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
      <Compile Include="Assets\Scripts\Bullets\LineBulletController.cs" />
      <Compile Include="Assets\Scripts\Overseer\GameStopController.cs" />
-     <Compile Include="Assets\Scripts\Bosses\BossTwo\BossTwoController.cs" />
-     <Compile Include="Assets\Scripts\Bullets\SwerveBulletController.cs" />
+     <Compile Include="Assets\Scripts\Guns\WaveGunController.cs" />
+     <Compile Include="Assets\Scripts\Bullets\WaveBulletController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

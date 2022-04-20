@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9183530386424302218
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131723819410884451, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+      propertyPath: m_Name
+      value: WaveGun
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3701491005918861794, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+--- !u!1 &2128669070759693801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7131723819410884451, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+  m_PrefabInstance: {fileID: 9183530386424302218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5070450109134078997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128669070759693801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69017b1d18bca414fa3edca9b62cfee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6497558742651428348, guid: 1a370ff24854c5c43b09e1f853be4690, type: 3}
+  fireRate: 1
+  bulletSpeed: {x: 0, y: -0.2, z: 0}
+  numberOfBulletsPerLine: 10
+  bulletGap: 4
+  bulletSpeedIncrement: -0.008
