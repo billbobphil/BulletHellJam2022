@@ -32,13 +32,11 @@ namespace Overseer
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("Restart level from player has death");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             else if (Input.GetKeyDown(KeyCode.Backspace))
             {
-                //TODO: go to main menu
-                Debug.Log("Should go to menu");
+                SceneManager.LoadScene(0);
             }
         }
     }

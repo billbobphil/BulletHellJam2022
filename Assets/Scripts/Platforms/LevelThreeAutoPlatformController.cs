@@ -7,11 +7,18 @@ public class LevelThreeAutoPlatformController : MonoBehaviour
 {
    private PlatformMovementController _platformMovementController;
    private float _originalSpeed;
+   private AudioSource _mySoundEffect;
    
    private void Start()
    {
       _platformMovementController = GetComponentInParent<PlatformMovementController>();
       _originalSpeed = _platformMovementController.platformSpeed;
+      
+      _mySoundEffect = GetComponent<AudioSource>();
+   }
+
+   public void StartMovingPlatform()
+   {
       StartCoroutine(MovePlatform());
    }
 
@@ -28,9 +35,19 @@ public class LevelThreeAutoPlatformController : MonoBehaviour
    {
       if (col.CompareTag("StartingPlatform"))
       {
+         _mySoundEffect.Play();
+         StartCoroutine(MuteAudioSource());
          _platformMovementController.ChangeDirection(PlatformMovementController.PlatformDirections.Stationary);
          _platformMovementController.platformSpeed = _originalSpeed;
          transform.position = new Vector3(transform.position.x, -.2f, 0);
+         GameObject.FindWithTag("Boss").GetComponent<BossThreeController>().ChangeBossState(BossThreeController.BossThreeState.PhaseTwo);
       }
    }
+
+   private IEnumerator MuteAudioSource()
+   {
+      yield return new WaitForSecondsRealtime(4);
+      _mySoundEffect.mute = true;
+   }
+   
 }

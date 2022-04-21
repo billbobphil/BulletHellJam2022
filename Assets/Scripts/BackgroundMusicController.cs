@@ -11,6 +11,7 @@ public class BackgroundMusicController : MonoBehaviour
     private void Awake()
     {
         _musicAudioSource = GameObject.FindWithTag("MainCamera").GetComponent<AudioSource>();
+        SwitchToPassiveTrack();
     }
 
     public void SwitchToPassiveTrack()

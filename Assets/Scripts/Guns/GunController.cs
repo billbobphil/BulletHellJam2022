@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Bullets;
 using UnityEngine;
 
@@ -10,12 +11,13 @@ namespace Guns
         public float fireRate;
         protected bool IsGunOn = false;
         private IEnumerator _fireCoroutine;
-        private AudioSource _myAudioSource;
+        [NonSerialized]
+        public AudioSource MyAudioSource;
         public Vector3 bulletSpeed;
 
         private void Awake()
         {
-            _myAudioSource = gameObject.GetComponent<AudioSource>();
+            MyAudioSource = gameObject.GetComponent<AudioSource>();
         }
         
         public void TurnOn()
@@ -43,7 +45,7 @@ namespace Guns
             while (IsGunOn)
             {
                 yield return new WaitForSecondsRealtime(fireRate);
-                _myAudioSource.Play();
+                MyAudioSource.Play();
                 CreateBullets();
             }
         }

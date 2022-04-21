@@ -20,7 +20,7 @@ public class BossThreeController : BossController
         
         protected override void AdditionalStartRoutineLogic()
         {
-            ChangeBossState(BossThreeState.PhaseOne);
+            ChangeBossState(BossThreeState.Passive);
         }
         
         public override void CommenceBattleStart()
@@ -28,7 +28,7 @@ public class BossThreeController : BossController
             if (!_hasStarted)
             {
                 _hasStarted = true;
-                ChangeBossState(BossThreeState.PhaseTwo);
+                ChangeBossState(BossThreeState.PhaseOne);
             }
         }
 
@@ -40,7 +40,8 @@ public class BossThreeController : BossController
 
         internal void ChangeBossState(BossThreeState newState)
         {
-
+            _bossState = newState;
+            
             if (newState == BossThreeState.Passive)
             {
                 BackgroundMusicController.SwitchToPassiveTrack();
@@ -49,8 +50,6 @@ public class BossThreeController : BossController
             {
                 BackgroundMusicController.SwitchToActionTrack();
             }
-            
-            _bossState = newState;
 
             Act();
         }
@@ -68,9 +67,21 @@ public class BossThreeController : BossController
                     break;
                 case BossThreeState.PhaseTwo:
                     DisableAllGuns();
+                    Transform gunOneStartPosition = guns[1].transform;
+                    guns[1].transform.SetPositionAndRotation(new(13, gunOneStartPosition.position.y, 0), new Quaternion());
+                    guns.Add(Instantiate(gunPrefabs[1], new Vector3(-13, transform.position.y, 0), new Quaternion()));
+                    guns[^1].GetComponent<OscillationGunController>().maximumAngle *= -1;
+                    guns[1].GetComponent<GunController>().TurnOn();
+                    guns[^1].GetComponent<GunController>().TurnOn();
                     break;
                 case BossThreeState.PhaseThree:
-                    DisableAllGuns();
+                    Transform gunTwoStartPosition = guns[2].transform;
+                    guns[2].transform.SetPositionAndRotation(new(2, gunTwoStartPosition.position.y, 0), new Quaternion());
+                    guns.Add(Instantiate(gunPrefabs[2], new Vector3(-2, gunTwoStartPosition.position.y,  0), new Quaternion()));
+                    guns[2].GetComponent<GunController>().bulletSpeed = new Vector3(0, -0.25f, 0);
+                    guns[^1].GetComponent<GunController>().bulletSpeed = new Vector3(0, -0.25f, 0);
+                    guns[2].GetComponent<GunController>().TurnOn();
+                    guns[^1].GetComponent<GunController>().TurnOn();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

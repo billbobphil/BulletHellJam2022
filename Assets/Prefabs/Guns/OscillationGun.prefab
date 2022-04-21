@@ -1,39 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3582425163522764305
+--- !u!1001 &923661964186097676
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3701491005918861794, guid: 48b76572c86befb4eaef943394253f89, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 8264711795866163241, guid: 37eb7992e6ea6d441b2c966c3b9ae9fc, type: 3}
-    - target: {fileID: 3701491005918861794, guid: 48b76572c86befb4eaef943394253f89, type: 3}
-      propertyPath: fireRate
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3701491005918861794, guid: 48b76572c86befb4eaef943394253f89, type: 3}
-      propertyPath: bulletSpeed.y
-      value: -3
-      objectReference: {fileID: 0}
     - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.99
+      value: 18.9
       objectReference: {fileID: 0}
     - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.33687297
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6189339238057358698, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: m_LocalRotation.w
@@ -65,7 +53,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7131723819410884451, guid: 48b76572c86befb4eaef943394253f89, type: 3}
       propertyPath: m_Name
-      value: SwerveGun
+      value: OscillationGun
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3701491005918861794, guid: 48b76572c86befb4eaef943394253f89, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+--- !u!1 &7938008509620658031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7131723819410884451, guid: 48b76572c86befb4eaef943394253f89, type: 3}
+  m_PrefabInstance: {fileID: 923661964186097676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1210684250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7938008509620658031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0099048d8d75b54cbaf7a76bd06c220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6969080391086135946, guid: fbe7ecd0b01c4184baa9c218b3febb8b, type: 3}
+  fireRate: 0.5
+  bulletSpeed: {x: 0, y: -0.2, z: 0}
+  rotationIncrement: 0.75
+  maximumAngle: 45

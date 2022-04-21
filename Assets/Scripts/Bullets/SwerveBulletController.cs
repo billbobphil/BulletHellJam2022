@@ -27,4 +27,12 @@ public class SwerveBulletController : BulletController
         _verticalMoveSpeed = myGunController.bulletSpeed.y;
         _phase = Random.value * 10;
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Sword"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

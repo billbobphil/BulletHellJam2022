@@ -38,9 +38,7 @@ namespace Overseer
             }
             else if (Input.GetKeyDown(KeyCode.Backspace))
             {
-                //TODO: Return to main menu
-                Debug.Log("Return to main menu from Victory");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(0);
             }
         }
     }
