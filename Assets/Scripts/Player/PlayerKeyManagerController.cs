@@ -78,6 +78,8 @@ public class PlayerKeyManagerController : MonoBehaviour
          keys.RemoveAt(index);
          GameObject keyIndicator = _keyIndicators[index];
          _keyIndicators.RemoveAt(index);
+         _keyRenderers.RemoveAt(index);
+         _keyIndicatorRenderers.RemoveAt(index);
          Destroy(keyIndicator);
          Destroy(col.gameObject);
          numberOfKeysCollected++;
