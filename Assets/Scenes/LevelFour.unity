@@ -568,6 +568,7 @@ MonoBehaviour:
   - {fileID: 367962511}
   - {fileID: 1595881752}
   - {fileID: 1316754715}
+  door: {fileID: 859291795}
 --- !u!1001 &367962510
 PrefabInstance:
   m_ObjectHideFlags: 0

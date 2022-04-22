@@ -20,6 +20,7 @@ public class PlayerKeyManagerController : MonoBehaviour
    private List<SpriteRenderer> _keyIndicatorRenderers = new List<SpriteRenderer>();
 
    private List<GameObject> _keyIndicators = new List<GameObject>();
+   public GameObject door;
    
    private void Start()
    {
@@ -34,6 +35,8 @@ public class PlayerKeyManagerController : MonoBehaviour
 
    private void FixedUpdate()
    {
+      if (keys.Count <= 0) return;
+      
       for (int i = 0; i < _keyIndicators.Count; i++)
       {
          if (_keyRenderers[i].isVisible)
@@ -84,13 +87,25 @@ public class PlayerKeyManagerController : MonoBehaviour
          Destroy(col.gameObject);
          numberOfKeysCollected++;
          keyPickupAudioSource.Play();
+
+         if (keys.Count == 0)
+         {
+            //Add door to list of empty keys so that indicator update loop will take care of it
+            _keyIndicators.Add(Instantiate(keyIndicatorPrefab, transform));
+            _keyIndicators[0].GetComponent<SpriteRenderer>().color = Color.red;
+            _keyIndicatorRenderers.Add(_keyIndicators[0].GetComponent<SpriteRenderer>());
+            
+            keys.Add(door);
+            _keyRenderers.Add(door.GetComponent<SpriteRenderer>());
+         }
       }
 
       if (col.CompareTag("Door"))
       {
          if (numberOfKeysCollected == TotalNumberOfKeys)
          {
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+            col.enabled = false;
             doorAudioManager.GetComponent<DoorAudioManager>().doorOpenAudioSource.Play();
          }
          else
