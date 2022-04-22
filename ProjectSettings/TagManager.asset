@@ -21,6 +21,8 @@ TagManager:
   - VictoryUI
   - TutorialManager
   - TutorialUI
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

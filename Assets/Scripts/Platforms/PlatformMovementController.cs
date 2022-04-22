@@ -17,6 +17,7 @@ public class PlatformMovementController : MonoBehaviour
     private bool _canMoveLeft = true;
     private bool _canMoveRight = true;
     private PlatformDirectionNodeController _activeNodeController;
+    public bool shouldIgnoreCameraBounds;
 
     public enum PlatformDirections
     {
@@ -77,6 +78,8 @@ public class PlatformMovementController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (shouldIgnoreCameraBounds) return;
+        
         _collisionEdges = _platformMovementRestriction.RestrictObjectMovement(transform, _platformWidth, _platformHeight);
     }
 

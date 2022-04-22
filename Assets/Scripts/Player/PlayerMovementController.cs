@@ -14,6 +14,7 @@ namespace Player
         private SwordAttackController _swordAttackController;
         private GameObject _overseer;
         private bool _playerCanMove = true;
+        public bool shouldIgnoreCameraBounds;
 
         private void Awake()
         {
@@ -70,6 +71,8 @@ namespace Player
 
         private void LateUpdate()
         {
+            if (shouldIgnoreCameraBounds) return;
+            
             RestrictObjectMovement();
         }
     

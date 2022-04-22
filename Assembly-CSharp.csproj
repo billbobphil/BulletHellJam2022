@@ -41,14 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ChromaticTitleController.cs" />
      <Compile Include="Assets\Scripts\Guns\WaveGunController.cs" />
      <Compile Include="Assets\Scripts\Overseer\PlatformMovementRestriction.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossOne\BossOneController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovementController.cs" />
+     <Compile Include="Assets\Scripts\Guns\OscillationGunController.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossController.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\LevelThreeMechanicTutorialController.cs" />
      <Compile Include="Assets\Scripts\Platforms\LevelThreeAutoPlatformController.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossThree\BossThreeController.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformDirectionNodeController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossThree\BossThreePhaseThreeTriggerController.cs" />
      <Compile Include="Assets\Scripts\Overseer\PlayerDeathController.cs" />
      <Compile Include="Assets\Scripts\Overseer\BattleStartController.cs" />
      <Compile Include="Assets\Scripts\Bullets\SwerveBulletController.cs" />
@@ -68,6 +72,7 @@
      <Compile Include="Assets\Scripts\Guns\HorizontalLineGunController.cs" />
      <Compile Include="Assets\Scripts\Bullets\TrajectoryChangeBulletController.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformEdgeColliderController.cs" />
+     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
      <Compile Include="Assets\Scripts\Bosses\TutorialBossController.cs" />
      <Compile Include="Assets\Scripts\Overseer\UIManager.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossOne\BossOneMidLevelTriggerController.cs" />
@@ -77,11 +82,11 @@
      <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
      <Compile Include="Assets\Scripts\Bullets\LineBulletController.cs" />
      <Compile Include="Assets\Scripts\Overseer\GameStopController.cs" />
-     <Compile Include="Assets\Scripts\Guns\OscillationGunController.cs" />
-     <Compile Include="Assets\Scripts\Bosses\BossThree\BossThreePhaseThreeTriggerController.cs" />
-     <Compile Include="Assets\Scripts\Tutorial\LevelThreeMechanicTutorialController.cs" />
-     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
-     <Compile Include="Assets\Scripts\ChromaticTitleController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\FinalLevelCameraController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\LevelFourBossController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerKeyManagerController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\KeyUIManager.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\DoorAudioManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -781,8 +786,8 @@
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     <Reference Include="Unity.Postprocessing.Editor">
+     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -802,8 +807,8 @@
      <Reference Include="Unity.2D.Tilemap.Extras.Editor">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.InternalAPIEditorBridge.001">
-     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
@@ -817,8 +822,14 @@
      <Reference Include="Unity.Burst">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Postprocessing.Runtime">
+     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.InternalAPIEditorBridge.001">
+     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Animation.Runtime">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
@@ -846,12 +857,6 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Postprocessing.Editor">
-     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Postprocessing.Runtime">
-     <HintPath>D:\Coding\UnityRepos\BulletHellJam2022\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
