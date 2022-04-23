@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 6969080391086135941, guid: fbe7ecd0b01c4184baa9c218b3febb8b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 982519f99d8cc324e8cc227474688c6a, type: 3}
+      objectReference: {fileID: 21300000, guid: 2af0a43697dd5e34db7945ce45c9fd23, type: 3}
     - target: {fileID: 6969080391086135946, guid: fbe7ecd0b01c4184baa9c218b3febb8b, type: 3}
       propertyPath: m_Name
       value: WaveBullet

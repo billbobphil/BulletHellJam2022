@@ -17,7 +17,6 @@ namespace Guns
             }
             else
             {
-                // _angleGap = - -1 * ((90 / (numberOfGroups - 1)) - 90);
                 _angleGap = - -1 * ((90 / (numberOfGroups - 1)));
             }
         }

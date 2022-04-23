@@ -88,6 +88,10 @@ public class PlayerKeyManagerController : MonoBehaviour
          numberOfKeysCollected++;
          keyPickupAudioSource.Play();
 
+         LevelFourBossController bossController = GameObject.FindWithTag("Boss").GetComponent<LevelFourBossController>();
+         
+         bossController.ChangeBossState(bossController.bossState + 1);
+
          if (keys.Count == 0)
          {
             //Add door to list of empty keys so that indicator update loop will take care of it

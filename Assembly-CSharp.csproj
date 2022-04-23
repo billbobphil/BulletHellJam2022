@@ -62,7 +62,12 @@
      <Compile Include="Assets\Scripts\Player\PlayerOnPlatformController.cs" />
      <Compile Include="Assets\Scripts\Guns\GunController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBulletCollisionController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\LevelFourBossController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\DoorAudioManager.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\KeyUIManager.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerKeyManagerController.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformMovementController.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossFour\FinalLevelCameraController.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialManagerScript.cs" />
      <Compile Include="Assets\Scripts\Player\SwordPositionController.cs" />
      <Compile Include="Assets\Scripts\Guns\BasicGunController.cs" />
@@ -82,11 +87,6 @@
      <Compile Include="Assets\Scripts\Player\SwordAttackController.cs" />
      <Compile Include="Assets\Scripts\Bullets\LineBulletController.cs" />
      <Compile Include="Assets\Scripts\Overseer\GameStopController.cs" />
-     <Compile Include="Assets\Scripts\Bosses\BossFour\FinalLevelCameraController.cs" />
-     <Compile Include="Assets\Scripts\Bosses\BossFour\LevelFourBossController.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerKeyManagerController.cs" />
-     <Compile Include="Assets\Scripts\Bosses\BossFour\KeyUIManager.cs" />
-     <Compile Include="Assets\Scripts\Bosses\BossFour\DoorAudioManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
