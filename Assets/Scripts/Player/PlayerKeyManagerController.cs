@@ -30,6 +30,8 @@ public class PlayerKeyManagerController : MonoBehaviour
          _keyIndicators[i].GetComponent<SpriteRenderer>().color = keys[i].GetComponent<SpriteRenderer>().color;
          _keyRenderers.Add(keys[i].GetComponent<SpriteRenderer>());
          _keyIndicatorRenderers.Add(_keyIndicators[i].GetComponent<SpriteRenderer>());
+         ParticleSystem.MainModule settings = keys[i].GetComponent<ParticleSystem>().main;
+         settings.startColor = new ParticleSystem.MinMaxGradient(_keyRenderers[i].color);
       }
    }
 
