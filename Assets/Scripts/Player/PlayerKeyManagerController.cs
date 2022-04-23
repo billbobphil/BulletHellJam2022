@@ -122,5 +122,10 @@ public class PlayerKeyManagerController : MonoBehaviour
             keyUiManager.GetComponent<KeyUIManager>().ShowKeyReminder();
          }
       }
+
+      if (col.CompareTag("EndingPlatform"))
+      {
+         GameObject.FindWithTag("MainCamera").GetComponent<FinalLevelCameraController>().shouldFollowPlayer = true;
+      }
    }
 }
