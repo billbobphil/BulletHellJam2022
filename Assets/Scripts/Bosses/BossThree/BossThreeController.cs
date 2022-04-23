@@ -66,15 +66,24 @@ public class BossThreeController : BossController
                     guns[0].GetComponent<GunController>().TurnOn();
                     break;
                 case BossThreeState.PhaseTwo:
-                    DisableAllGuns();
+                    // DisableAllGuns();
+                    // Transform gunOneStartPosition = guns[1].transform;
+                    // guns[1].transform.SetPositionAndRotation(new(13, gunOneStartPosition.position.y, 0), new Quaternion());
+                    // guns.Add(Instantiate(gunPrefabs[1], new Vector3(-13, transform.position.y, 0), new Quaternion()));
+                    // guns[^1].GetComponent<OscillationGunController>().maximumAngle *= -1;
+                    // guns[1].GetComponent<GunController>().TurnOn();
+                    // guns[^1].GetComponent<GunController>().TurnOn();
+                    break;
+                case BossThreeState.PhaseThree:
+                    DisableAllGuns();                    
+                    
                     Transform gunOneStartPosition = guns[1].transform;
                     guns[1].transform.SetPositionAndRotation(new(13, gunOneStartPosition.position.y, 0), new Quaternion());
                     guns.Add(Instantiate(gunPrefabs[1], new Vector3(-13, transform.position.y, 0), new Quaternion()));
                     guns[^1].GetComponent<OscillationGunController>().maximumAngle *= -1;
                     guns[1].GetComponent<GunController>().TurnOn();
                     guns[^1].GetComponent<GunController>().TurnOn();
-                    break;
-                case BossThreeState.PhaseThree:
+                    
                     Transform gunTwoStartPosition = guns[2].transform;
                     guns[2].transform.SetPositionAndRotation(new(2, gunTwoStartPosition.position.y, 0), new Quaternion());
                     guns.Add(Instantiate(gunPrefabs[2], new Vector3(-2, gunTwoStartPosition.position.y,  0), new Quaternion()));

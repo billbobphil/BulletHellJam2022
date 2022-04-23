@@ -75,7 +75,7 @@ namespace Player
             MakeSwordInactive();
             yield return new WaitForSecondsRealtime(0.2f);
             MakeSwordInvisible();
-            yield return new WaitForSecondsRealtime(.3f);
+            yield return new WaitForSecondsRealtime(.15f);
             MakeSwordAvailable();
             _hitSomethingRelevant = false;
         }
